@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 echo $environment > .env.example
 sed 's/ \([^ ]*=\)/\n\1/g' .env.example > .env
