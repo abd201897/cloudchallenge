@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from .views import HomeView, weather_view, apod_image_view, mars_rover_images_view, call_azure_function_view, download_image, send_email_view
-#from .views import apod_image_view
+
 
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
