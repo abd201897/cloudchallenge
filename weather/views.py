@@ -9,7 +9,7 @@ import requests
 
 from weather_map import settings
 from .apod import fetch_and_save_apod_image, fetch_and_mars_rover_image
-from .models import MarsPhoto
+from .models import MarsPhoto, APODImage
 from decouple import config
 
 class HomeView(TemplateView):
@@ -56,28 +56,6 @@ def mars_rover_images_view(request):
 
 
 
-
-# myapp/views.py
-# import requests
-# from django.shortcuts import render
-# from django.conf import settings
-
-# def fetch_apod_image():
-#     url = settings.AZURE_FUNCTION_URL  # The URL of your Azure Function
-#     response = requests.get(url)
-#     if response.status_code == 200:
-#         return response.json()
-#     else:
-#         return None
-
-# def apod_image_view(request):
-#     apod_image = fetch_apod_image()
-#     return render(request, 'weather/apod.html', {'apod_image': apod_image})
-
-# myapp/views.py
-
-
-
 def call_azure_function_view(request):
     azure_function_url = settings.AZURE_FUNCTION_URL
 
@@ -97,7 +75,7 @@ def download_image(request, photo_id):
         raise Http404("Image not found.")
     
     with mars_photo.image.open('rb') as f:
-        response = HttpResponse(f.read(), content_type='image/jpg')
+        response = HttpResponse(f.read(), content_type='image/jpeg')
         response['Content-Disposition'] = f'attachment; filename="{mars_photo.image}"'
         return response
     
@@ -132,6 +110,19 @@ def send_email_view(request):
             return HttpResponse(f"Failed to send email: {response.text}", status=response.status_code)
 
     return render(request, 'weather/send_mail.html')
+
+
+def download_apod(request, image):
+    try:
+        apod_photo = APODImage.objects.get(image_file=image)
+    except APODImage.DoesNotExist:
+        raise Http404("Image not found.")
+    
+    with apod_photo.image.open('rb') as f:
+        response = HttpResponse(f.read(), content_type='image/jpg')
+        response['Content-Disposition'] = f'attachment; filename="{apod_photo.image_file}"'
+        return response(request, image)
+    
 
 
     
