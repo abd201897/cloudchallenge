@@ -118,9 +118,9 @@ def download_apod(request, id):
     except APODImage.DoesNotExist:
         raise Http404("Image not found.")
     
-    with apod_photo.image.open('rb') as f:
+    with apod_photo.image_file.open('rb') as f:
         response = HttpResponse(f.read(), content_type='image/jpg')
-        response['Content-Disposition'] = f'attachment; filename="{apod_photo.image_file}"'
+        response['Content-Disposition'] = f'attachment; filename="{apod_photo.image_file.name}"'
         return response
     
 

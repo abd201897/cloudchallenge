@@ -13,6 +13,9 @@
         <p>{{ apod_image.explanation }}</p>
         <img src="{{ apod_image.image_file.url }}" alt="{{ apod_image.title }}">
         <a href="{% url 'download_apod' apod_image.id %}" download>Download Image</a>
+        <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20image%20!%20{{ apod_image.image_url }}" target="_blank">
+            Share on WhatsApp
+        </a>
     {% else %}
         <p>No image available</p>
     {% endif %}
