@@ -21,7 +21,7 @@ def weather_view(request):
   if request.method == 'GET' and 'lat' in request.GET and 'lon' in request.GET:
     lat = request.GET['lat']
     lon = request.GET['lon']
-    api_key = config('weather_api_key', cast=str)
+    api_key = config('WEATHER_API_KEY', cast=str)
     units = 'metric'
     lang = 'fr'
     url = f'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={api_key}&units={units}&lang={lang}'
@@ -41,14 +41,14 @@ def weather_view(request):
 
 
 def apod_image_view(request):
-    api_key = config('apod_api_key', cast=str)
+    api_key = config('APOD_API_KEY', cast=str)
     apod_image = fetch_and_save_apod_image(api_key)
     return render(request, 'weather/apod.html', {'apod_image': apod_image})
 
 
 def mars_rover_images_view(request):
     rover_camera = request.GET.get('camera')
-    api_key = config('apod_api_key', cast=str)
+    api_key = config('APOD_API_KEY', cast=str)
     photos = fetch_and_mars_rover_image(api_key, rover_camera)
     return render(request, 'weather/mars.html', {'photos': photos})
 
