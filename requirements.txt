@@ -9,10 +9,10 @@ comm==0.2.2
 debugpy==1.8.1
 decorator==5.1.1
 distlib==0.3.8
-Django==3.2
-django-cors-headers==4.3.1
+Django==2.1.15
+# django-cors-headers==4.3.1
 django-pyodbc-azure==2.1.0.0
-djangorestframework==3.14.0
+# djangorestframework==3.14.0
 executing==2.0.1
 filelock==3.13.4
 flatbuffers==24.3.25
