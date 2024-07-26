@@ -9,6 +9,7 @@ def fetch_and_save_apod_image(api_key):
     url = f"https://api.nasa.gov/planetary/apod?api_key={api_key}"
     response = requests.get(url)
     data = response.json()
+    
 
     if response.status_code == 200 and 'url' in data:
         image_url = data['url']
