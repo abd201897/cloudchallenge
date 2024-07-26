@@ -49,12 +49,12 @@
     }
     .header-title  {
        
-        height: 20px;
+        height: 10px;
         width: auto;
-        margin-right: 0;
+        margin-left: 200px;
         z-index: 1000;
         text-align: center;
-        margin-top: 10px; /* Adjust as needed */
+        margin-top: 0; /* Adjust as needed */
         margin-bottom: 50px;
         text-align: center;
     }

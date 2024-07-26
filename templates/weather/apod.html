@@ -1,17 +1,13 @@
-{% extends 'weather/base.html' %}
 {% load static %}
-
-
-{% block title %}
-Cloud Event Weather
-{% endblock %}
-
-{% block extra_css %}
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-{% endblock %}
-
-{% block content %}
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astronomy Picture of the Day</title>
+    <link rel="stylesheet" href="{% static 'css/apod.css' %}">
+</head>
+<body>
     {% if apod_image %}
         <h1>{{ apod_image.title }}</h1>
         <p>{{ apod_image.date }}</p>
@@ -22,13 +18,7 @@ Cloud Event Weather
             Share on WhatsApp
         </a>
     {% else %}
-        <p>No image available</p>
+        <p class="no-image">No image available</p>
     {% endif %}
-
-    {% block extra_js %}
-     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-     <script src="{% static 'js/app.js' %}"></script>
-
-    {% endblock %}
-
-{% endblock %}    
+</body>
+</html>

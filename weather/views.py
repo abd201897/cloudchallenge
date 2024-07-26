@@ -1,6 +1,7 @@
 import json
+import mimetypes
 import os
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
 from django.http import Http404, HttpResponse, JsonResponse
 # Create your views here.
@@ -43,16 +44,20 @@ def weather_view(request):
 
 
 def apod_image_view(request):
-    api_key = config('APOD_API_KEY', cast=str)
+    #api_key = config('APOD_API_KEY', cast=str)
+    api_key="fb3pI8MJ2FhwWQZRvRY3RWOoWigZbX6qWbWcChpI"
     apod_image = fetch_and_save_apod_image(api_key)
     return render(request, 'weather/apod.html', {'apod_image': apod_image})
 
 
 def mars_rover_images_view(request):
     rover_camera = request.GET.get('camera')
-    api_key = config('APOD_API_KEY', cast=str)
+    api_key = "fb3pI8MJ2FhwWQZRvRY3RWOoWigZbX6qWbWcChpI"
     photos = fetch_and_mars_rover_image(api_key, rover_camera)
     return render(request, 'weather/mars.html', {'photos': photos})
+
+def nasa_api(request): 
+    return render(request, 'weather/nasa.html')
 
 
 
@@ -96,7 +101,7 @@ def send_email_view(request):
         payload = {
                      "recipient": recipient,
                       "subject": "Test Subject",
-                      "body": "This is a test email.",
+                      "body": f"This is a test email that user {recipient} viewed images.",
                       "sender_email": sender_email,
                       "sender_password": sender_password
                   }
@@ -105,7 +110,7 @@ def send_email_view(request):
         response = requests.post(azure_function_url, json=payload)
 
         if response.status_code == 200:
-            return HttpResponse("Email sent successfully.")
+            return redirect('nasa_api')
         else:
             return HttpResponse(f"Failed to send email: {response.text}", status=response.status_code)
 
@@ -113,14 +118,17 @@ def send_email_view(request):
 
 
 def download_apod(request, id):
-
-    apod_image = get_object_or_404(APODImage, id=id)
-    if not apod_image.image_file:
-        raise Http404("Image not found")
+    try:
+        apod_photo = APODImage.objects.get(id=id)
+        
+    except APODImage.DoesNotExist:
+        raise Http404("Image not found.")
     
-    response = HttpResponse(apod_image.image_file, content_type='image/jpg')
-    response['Content-Disposition'] = f'attachment; filename="{apod_image.image_file.name}"'
-    return response
+    with apod_photo.image_file.open('rb') as f:
+        response = HttpResponse(f.read(), content_type='image/jpg')
+        response['Content-Disposition'] = f'attachment; filename="{apod_photo.image_file}"'
+        return response
+    
     
 
 

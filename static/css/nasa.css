@@ -1,0 +1,70 @@
+/* Apply a background image to the body */
+body {
+    background-image: url('../images/mars2.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: #fff; /* Text color for better visibility */
+    font-family: Arial, sans-serif; /* Font style */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Style the header */
+header {
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    padding: 20px;
+    border-bottom: 2px solid #4CAF50;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* Style the main section */
+main {
+    padding: 20px;
+}
+
+/* Style the icon container */
+.icon-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Style individual icon boxes */
+.icon {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+}
+
+.icon i {
+    font-size: 3em;
+    color: #4CAF50; /* Icon color */
+    margin-bottom: 10px;
+}
+
+.icon h2 {
+    margin: 10px 0;
+    font-size: 1.8em;
+}
+
+.icon a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.icon a:hover {
+    text-decoration: underline;
+}
+
+.icon p {
+    font-size: 1.2em;
+}

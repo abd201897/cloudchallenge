@@ -1,53 +1,48 @@
-
-
-<!-- mars/templates/mars/images.html -->
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mars Rover Images</title>
-    <style>
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .gallery img {
-            width: 200px;
-            margin: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'css/mars.css' %}">
 </head>
 <body>
     <h1>Mars Rover Images</h1>
     <form method="get">
         <label for="camera">Rover Camera:</label>
         <select name="camera" id="camera">
-            <option value="fhaz">fhaz</option>
-            <option value="rhaz">rhaz</option>
-            <option value="mast">mast</option>
-            <option value="chemcam">chemcam</option>
-            <option value="mahil">mahil</option>
-            <option value="mardi">mardi</option>
-            <option value="navcam">navcam</option>
-            <option value="pancam">pancam</option>
-            <option value="minites">minites</option>
+            <option value="fhaz">FHAZ</option>
+            <option value="rhaz">RHAZ</option>
+            <option value="mast">MAST</option>
+            <option value="chemcam">CHEMCAM</option>
+            <option value="mahil">MAHIL</option>
+            <option value="mardi">MARDI</option>
+            <option value="navcam">NAVCAM</option>
+            <option value="pancam">PANCAM</option>
+            <option value="minites">MINITES</option>
         </select>
         <button type="submit">Fetch Images</button>
     </form>
     <div class="gallery">
         {% for image in photos %}
-            <img src="{{ image.img_src }}" alt="Mars Rover Image">
-            <p>{{ image.earth_date }}</p>
-            
-            <a href="{% url 'download_image' image.id %}" download>Download Image</a>
-            <h4>{{image.camera.full_name}}</h4>
-            <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20image%20!%20{{ image.image_src }}" target="_blank">
-                Share on WhatsApp
-            </a>
-            
+            <div class="gallery-item">
+                <img src="{{ image.img_src }}" alt="Mars Rover Image">
+                <p>{{ image.earth_date }}</p>
+                <a href="{% url 'download_image' image.id %}" download>Download Image</a>
+                <h4>{{image.camera.full_name}}</h4>
+                
+                <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20image%20!%20{{ image.img_src }}" target="_blank">
+                    Share on WhatsApp
+                </a>
+            </div>
         {% endfor %}
     </div>
+    <section class="info-section">
+        <h2>About Mars Rover Images</h2>
+        <p>
+            Mars Rover Images are provided by NASA's Mars rovers, which have been exploring the Martian surface for years. These images help scientists understand the planet's geology, climate, and potential for past life. The rovers capture high-resolution photos that are shared with the public, offering a glimpse into Mars' rugged terrain and intriguing features.
+        </p>
+    </section>
 </body>
 </html>
-

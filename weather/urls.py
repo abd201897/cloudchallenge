@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from .views import HomeView, weather_view, apod_image_view, mars_rover_images_view, call_azure_function_view, download_image, send_email_view, download_apod
+from .views import HomeView, weather_view, apod_image_view, mars_rover_images_view, call_azure_function_view, download_image, send_email_view, download_apod, nasa_api
 
 
 urlpatterns = [
@@ -12,6 +12,7 @@ urlpatterns = [
     path('download/<int:photo_id>', download_image, name='download_image'),
     path('send_email/', send_email_view, name='send'),
     path('download/<int:id>', download_apod, name='download_apod'),
+    path('nasa_api/', nasa_api, name='nasa_api'),
 
     
 ]
