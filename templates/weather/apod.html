@@ -12,7 +12,7 @@
         <p>{{ apod_image.date }}</p>
         <p>{{ apod_image.explanation }}</p>
         <img src="{{ apod_image.image_file.url }}" alt="{{ apod_image.title }}">
-        <a href="{% url 'download_apod' apod_image.image_file.url %}" download>Download Image</a>
+        <a href="{% url 'download_apod' apod_image.id %}" download>Download Image</a>
     {% else %}
         <p>No image available</p>
     {% endif %}

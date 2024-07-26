@@ -11,7 +11,7 @@ urlpatterns = [
     path('test/', call_azure_function_view, name='call_azure_function_view'),
     path('download/<int:photo_id>', download_image, name='download_image'),
     path('send_email/', send_email_view, name='send'),
-    path('download/<str:image>', download_apod, name='download_apod'),
+    path('download/<int:id>', download_apod, name='download_apod'),
 
     
 ]

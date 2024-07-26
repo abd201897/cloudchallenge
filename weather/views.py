@@ -75,7 +75,7 @@ def download_image(request, photo_id):
         raise Http404("Image not found.")
     
     with mars_photo.image.open('rb') as f:
-        response = HttpResponse(f.read(), content_type='image/jpeg')
+        response = HttpResponse(f.read(), content_type='image/jpg')
         response['Content-Disposition'] = f'attachment; filename="{mars_photo.image}"'
         return response
     
@@ -112,16 +112,16 @@ def send_email_view(request):
     return render(request, 'weather/send_mail.html')
 
 
-def download_apod(request, image):
+def download_apod(request, id):
     try:
-        apod_photo = APODImage.objects.get(image_file=image)
+        apod_photo = APODImage.objects.get(id=id)
     except APODImage.DoesNotExist:
         raise Http404("Image not found.")
     
     with apod_photo.image.open('rb') as f:
         response = HttpResponse(f.read(), content_type='image/jpg')
         response['Content-Disposition'] = f'attachment; filename="{apod_photo.image_file}"'
-        return response(request, image)
+        return response
     
 
 
