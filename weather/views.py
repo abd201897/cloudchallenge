@@ -44,15 +44,14 @@ def weather_view(request):
 
 
 def apod_image_view(request):
-    #api_key = config('APOD_API_KEY', cast=str)
-    api_key="fb3pI8MJ2FhwWQZRvRY3RWOoWigZbX6qWbWcChpI"
+    api_key = config('APOD_API_KEY', cast=str)
     apod_image = fetch_and_save_apod_image(api_key)
     return render(request, 'weather/apod.html', {'apod_image': apod_image})
 
 
 def mars_rover_images_view(request):
     rover_camera = request.GET.get('camera')
-    api_key = "fb3pI8MJ2FhwWQZRvRY3RWOoWigZbX6qWbWcChpI"
+    api_key = config('APOD_API_KEY', cast=str)
     photos = fetch_and_mars_rover_image(api_key, rover_camera)
     return render(request, 'weather/mars.html', {'photos': photos})
 
@@ -100,8 +99,8 @@ def send_email_view(request):
         # Email parameters
         payload = {
                      "recipient": recipient,
-                      "subject": "Test Subject",
-                      "body": f"This is a test email that user {recipient} viewed images.",
+                      "subject": "User Access Granted for NASA APOD",
+                      "body": f"A user has been granted access to the NASA Astronomy Picture of the Day (APOD) web page. User Details: {recipient}.Please monitor this interaction and ensure that all user activities are tracked and managed appropriately.",
                       "sender_email": sender_email,
                       "sender_password": sender_password
                   }

@@ -28,6 +28,24 @@
 
 <body>
 
+
+    <div class="container-fluid bg-light position-relative shadow pt-10">
+        <nav class="navbar navbar-expand-lg bg-secondary navbar-light py-3 py-lg-0 px-0 px-lg-5 fixed-top">
+            <div class="d-flex w-100">
+                <a href="/" class="navbar-brand d-flex align-items-center">
+                    <h1 class="header-title">Code Cloudies</h1>
+                </a>
+                <div class="header-title">
+                    <a href="{% url 'send' %}">Click here to view NASA APOD Images</a>
+                </div>
+                <!-- Optional right-aligned nav items -->
+                <!-- <div class="navbar-nav ml-auto">
+                    <a href="/" class="nav-item nav-link">Registration</a>
+                </div> -->
+            </div>
+        </nav>
+    </div>
+
     <div class="navbar-bottom-padding py-5"></div>
     <main>
         {% block content %}
