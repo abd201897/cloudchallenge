@@ -1,12 +1,17 @@
-<!-- apod/templates/apod/image.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astronomy Picture of the Day</title>
-</head>
-<body>
+{% extends 'weather/base.html' %}
+{% load static %}
+
+
+{% block title %}
+Cloud Event Weather
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+{% endblock %}
+
+{% block content %}
+
     {% if apod_image %}
         <h1>{{ apod_image.title }}</h1>
         <p>{{ apod_image.date }}</p>
@@ -19,5 +24,11 @@
     {% else %}
         <p>No image available</p>
     {% endif %}
-</body>
-</html>
+
+    {% block extra_js %}
+     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+     <script src="{% static 'js/app.js' %}"></script>
+
+    {% endblock %}
+
+{% endblock %}    

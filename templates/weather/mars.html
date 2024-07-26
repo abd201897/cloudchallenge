@@ -1,8 +1,6 @@
 
 {% load social_share %}
 
-
-
 <!-- mars/templates/mars/images.html -->
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +43,9 @@
             
             <a href="{% url 'download_image' image.id %}" download>Download Image</a>
             <h4>{{image.camera.full_name}}</h4>
-            {% post_to_whatsapp "New Song: {{image.image}}" "Share via WhatsApp" %}
+            <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20image%20!%20{{ image.image_src }}" target="_blank">
+                Share on WhatsApp
+            </a>
             
         {% endfor %}
     </div>
