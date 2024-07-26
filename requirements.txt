@@ -9,7 +9,7 @@ comm==0.2.2
 debugpy==1.8.1
 decorator==5.1.1
 distlib==0.3.8
-Django==2.1.15
+Django==3.2
 django-cors-headers==4.3.1
 django-pyodbc-azure==2.1.0.0
 djangorestframework==3.14.0
