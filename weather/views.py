@@ -1,6 +1,6 @@
 import json
 import os
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy
 from django.http import Http404, HttpResponse, JsonResponse
 # Create your views here.
@@ -113,15 +113,14 @@ def send_email_view(request):
 
 
 def download_apod(request, id):
-    try:
-        apod_photo = APODImage.objects.get(id=id)
-    except APODImage.DoesNotExist:
-        raise Http404("Image not found.")
+
+    apod_image = get_object_or_404(APODImage, id=id)
+    if not apod_image.image_file:
+        raise Http404("Image not found")
     
-    with apod_photo.image_file.open('rb') as f:
-        response = HttpResponse(f.read(), content_type='image/jpg')
-        response['Content-Disposition'] = f'attachment; filename="{apod_photo.image_file.name}"'
-        return response
+    response = HttpResponse(apod_image.image_file, content_type='image/jpg')
+    response['Content-Disposition'] = f'attachment; filename="{apod_image.image_file.name}"'
+    return response
     
 
 
