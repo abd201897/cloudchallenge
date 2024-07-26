@@ -25,13 +25,19 @@ jobs:
         registry: https://index.docker.io/v1/
         username: ${{ secrets.AzureAppService_ContainerUsername_386e123f2ceb49228e1f066078be9078 }}
         password: ${{ secrets.AzureAppService_ContainerPassword_31030f0bd740456c8dee3059205d7b7c }}
+    
+    - name: Set environment variables
+      run: |
+        echo ${{ secrets.ENV }} > .env
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_386e123f2ceb49228e1f066078be9078 }}/abdullah201897/cbp-task2-backend:${{ github.sha }}
+        tags: abdullah201897/cloudchallenge:${{ github.sha }}
         file: ./Dockerfile
+        build-args: |
+          "environment=${{ secrets.ENV }}"
 
   deploy:
     runs-on: ubuntu-latest
@@ -48,4 +54,4 @@ jobs:
         app-name: 'cloudchallenge-app'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_cf659b49eac748f7b94aea01c2fa6f66 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_386e123f2ceb49228e1f066078be9078 }}/abdullah201897/cbp-task2-backend:${{ github.sha }}'
+        images: 'index.docker.io/abdullah201897/cloudchallenge:${{ github.sha }}'
