@@ -62,10 +62,10 @@ setuptools==70.0.0
 six==1.16.0
 sqlparse==0.4.4
 stack-data==0.6.3
-tensorboard==2.16.2
-tensorboard-data-server==0.7.2
-tensorflow==2.16.1
-tensorflow-intel==2.16.1
+# tensorboard==2.16.2
+# tensorboard-data-server==0.7.2
+# tensorflow==2.16.1
+# tensorflow-intel==2.16.1
 termcolor==2.4.0
 tornado==6.4.1
 traitlets==5.14.3
