@@ -6,6 +6,8 @@ from django.http import Http404, HttpResponse, JsonResponse
 # Create your views here.
 from django.views.generic.base import TemplateView
 import requests
+
+from weather_map import settings
 from .apod import fetch_and_save_apod_image, fetch_and_mars_rover_image
 from .models import MarsPhoto
 from decouple import config
