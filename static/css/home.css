@@ -1,0 +1,789 @@
+.header-title {
+
+    margin-top: 50px;
+    margin-right: 300px;
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  
+  .header-title h1 {
+    margin: 0;
+    /* font-size: 1.5rem;  */
+  }
+  
+  .text-justify {
+    text-align: justify;
+  }
+  
+  .img-fluid.w-100 {
+  width: 1000px;
+  height: 500px; /* Maintain aspect ratio */
+  }
+  
+  
+  
+  .fusion-logo { 
+    width: 250px;
+    height: 150px;
+  
+    margin-top: 10px;
+    margin-left: -20px;
+    z-index: -1;
+  
+  
+  }
+  @media (max-width: 768px) {
+    .navbar .d-flex {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 10px;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+    .fusion-logo { 
+        width: 200px;
+        height: 100px;
+        margin-left: 5px;
+        z-index: -1;
+    }
+    .header-title  {
+       
+        height: 20px;
+        width: auto;
+        margin-right: 0;
+        z-index: 1000;
+        text-align: center;
+        margin-top: 10px; /* Adjust as needed */
+        margin-bottom: 50px;
+        text-align: center;
+    }
+  }
+  
+  
+  .p-footer {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    margin-left: 10px;
+    text-align: justify;
+    font-family: sans-serif;
+  }
+  
+  
+  .p-home {
+      margin-top: 10px;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      color: #777777;
+      text-align: justify;
+      font-family: sans-serif;
+      /* letter-spacing: -0.5px; */
+      word-spacing: -0.5px;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+  
+    .p-home2 {
+      margin-top: 10px;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      color: #777777;
+      text-align: justify;
+      font-family: sans-serif;
+      /* letter-spacing: -0.5px; */
+      word-spacing: -0.5px;
+      margin-right: 20px;
+      margin-left: -10px;
+    
+    }
+  
+    
+  .p-visit2 {
+    margin-top: 0;
+    /* margin-bottom: 1rem; */
+    font-size: 1rem;
+    color: #0F2D49;
+    text-align: justify;
+    font-family: sans-serif;
+  }
+  
+    .p-visit {
+      margin: 20px;
+    
+      font-size: 1.1rem;
+      color: #ffff;
+      text-align: justify;
+      font-family: sans-serif;
+  
+    }
+  
+  
+  
+    .p-about {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      color: #0F2D49;
+      text-align: justify;
+      font-family: sans-serif;
+      margin-right: 10px;
+    }
+  
+  
+  .h4-about{
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      color: #0F2D49;
+      text-align: center;
+      font-family: sans-serif;
+      margin-right: 10px;
+  }
+  .p-apply {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #0F2D49;
+    text-align: center;
+    font-family: sans-serif;
+    /* margin-right: 10px; */
+  }
+  
+    .img-buy {
+      width: 250px; /* Set width to container's width */
+      height: 100px; /* Set height as needed */
+      border: 1px solid #0F2D49; /* Add or modify border */
+      object-fit: cover;  /* Adjust object-fit as needed */
+      border-radius: 20px;
+      
+      
+    }
+  
+    .img-apply {
+      width: auto; /* Set width to container's width */
+      height: auto; /* Set height as needed */
+      /* border: 1px solid #0F2D49; Add or modify border */
+      object-fit: cover;  
+      border-radius: 50px;
+      
+      
+    }
+  
+  
+  .img-bannerhome {
+    width: 100%; /* Set width to 100% for responsiveness */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Resize image to fit container */
+    border: 1px solid #0F2D49; /* Add or modify border */
+    border-radius: 20px;
+  }
+  
+  
+  .img-fluid-harrow {
+  
+      max-width: 650px;
+  
+      max-height: 450px;
+      padding-left: 10px;
+      padding-bottom: 10px;
+      border-radius: 50px;
+      padding-top: 20px;
+      image-rendering: optimizeQuality;
+      /* display: flex; */
+      
+    }
+  
+    .img-fluid-visit {
+      width: auto;
+      height: 150px;
+      border-radius: 100px;
+      image-rendering: optimizeQuality;
+      
+    }
+     
+  
+  .img-fluid-jo {
+    width: auto;
+    height: 300px;
+    padding-top:100px;
+    padding-left: 20px;
+    padding-right: 40px;
+    border-radius: 200px;
+    image-rendering: optimizeQuality;
+    
+  }
+  
+  
+   
+  .banner-section-about:before,
+  .banner-section-visit:before,
+  .banner-section-contact:before, 
+  .banner-section-apply:before   {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background-color: #ffffff; */
+   
+    top: 0;
+    height: 500px;  /* Adjust height as needed */
+    overflow: hidden;  /* Optional to hide overflowing content */
+    
+  }
+  
+    .banner-section-about {
+      position: relative;
+      background-image: url("../img/about.jpg");
+      background-size: cover;  /* Resize image to fit container */
+      background-position: top;  /* Center the image horizontally */
+      height: 500px;  /* Set a height for the banner section */
+      /* background-position: 0px 350px; */
+      /* clip-path: polygon(0 0, 100% 0, 100% 0, 0 calc(100% - 50px));  */
+      /* top: 0px; */
+      /* left: 0px; */
+      width: 100%;
+      padding-right: 50px;
+      z-index: 100;
+    }
+    
+  
+    .banner-section-visit {
+  
+      position: relative;
+      background-image: url("../img/visit.jpg");
+      background-size: cover;  /* Resize image to fit container */
+      background-position: top;  /* Center the image horizontally */
+      height: 700px;  /* Set a height for the banner section */
+      width: 100%;
+      padding-right: 50px;
+      z-index: 100;
+    }
+  
+  
+    .banner-section-contact {
+      position: relative;
+      background-image: url("../img/contact.jpg");
+      background-size: cover;  /* Resize image to fit container */
+      background-position: top;  /* Center the image horizontally */
+      height: 700px;  /* Set a height for the banner section */
+      width: 100%;
+      padding-right: 50px;
+      z-index: 100;
+  
+    }
+  
+    .banner-section-apply {
+      position: relative;
+      background-image: url("../img/exhibit.jpg");
+      background-size: cover;  /* Resize image to fit container */
+      background-position: top;  /* Center the image horizontally */
+      height: 700px;  /* Set a height for the banner section */
+      width: 100%;
+      padding-right: 50px;
+      z-index: 100;
+    }
+  
+    @media (max-width: 768px) {
+     
+      .banner-section-contact, 
+  
+      .banner-section-visit ,
+  
+      
+      .banner-section-apply ,
+      .banner-section-about {
+  
+        background-size: cover;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-right: 50px;
+        top: 100px;
+        height: 200px;
+        width: auto;
+  
+      }
+    }
+  
+  
+  
+    .banner-section-yorkshire{
+      position: relative;
+      background-image: url("../img/yorkshiregrounds.png");
+      background-size: cover;  /* Resize image to fit container */
+      background-position: center;  /* Center the image horizontally */
+      height: 700px;  /* Set a height for the banner section */
+      background-position: 0 50px;
+      /* clip-path: polygon(0 0, 100% 0, 100% 0, 0 calc(100% - 50px));  */
+      top: 0;
+      left: 0;
+      width: 100%;
+  
+      z-index: -1;
+    }
+  
+  
+    .text-content {
+      padding-top: 80px; /* Adjust padding as needed */
+      /* display: flex; */
+      justify-content: center;
+      /* align-items: center */
+    }
+  
+  
+  .shadow-box {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 20px; 
+    border-radius: 20px; /* Optional rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; 
+    /* max-width: 700px; */
+    /* margin: 0 auto;  */
+  }
+  
+  @media screen and (max-width: 768px) { /* Adjust max-width as needed */
+    .shadow-box {
+      display: flex; /* Show the shadow box on smaller screens */
+      flex-direction: column; /* Stack content vertically */
+      align-items: center; /* Center content horizontally */
+      justify-content: center; 
+    }
+    .text-content {
+      display: flex; /* Show the shadow box on smaller screens */
+      flex-direction: column; /* Stack content vertically */
+      align-items: center; /* Center content horizontally */
+      justify-content: center; 
+    
+    
+    }
+  
+    .img-fluid-harrow {
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 1;
+      max-width: 300px;
+    }
+  }
+  
+  
+    .transparent-box {
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+      padding: 20px; /* Adjust padding as needed */
+      border-radius: 5px; /* Optional rounded corners */
+      display: flex; /* Make it a flexbox container */
+      flex-wrap: wrap; /* Allow text to wrap on smaller screens */
+      justify-content: center; /* Center content horizontally */
+      align-items: center; /* Center content vertically */
+    }
+  /* Increase specificity (optional) */
+  .custom-file-upload {
+    padding: 50px;
+    text-align: center; /* Center the content within the area */
+    border: 2px dashed #dbeef5; /* Example dashed border */
+    cursor: pointer; /* Indicate draggable area on hover */
+    background-color: #dbeef5; /* Example background color */
+  }
+  
+  .custom-file-upload span {
+    display: block; /* Display the message on a new line */
+    /* Adjust margin-top for desired spacing above the image */
+    margin-top: 10px; /* Example margin for the message */
+  }
+  
+  /* Consider adding styles for the preview image (optional) */
+  .upload-preview img {
+    /* Set width and height as needed */
+    width: 100%; /* Example: Fill the width of the upload area */
+    /* Adjust other styles (e.g., margin, padding) for desired layout */
+  }
+  
+  
+  .h1-apply {
+  
+    color: #e09f3e;
+    
+  }
+  
+  .p-home-list {
+    /* Add styles to make the list look like the paragraph, if necessary */
+    list-style-type: none; /* Removes default list bullets */
+    padding-left: 0; /* Removes default padding */
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    color: #0F2D49;
+    text-align: justify;
+    font-family: sans-serif;
+    
+  }
+  
+  .p-home-list li {
+    margin: 5px 0; /* Add spacing between list items */
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    flex-direction:  row-reverse;
+    justify-content: space-between;
+  
+  }
+  
+  @media (max-width: 768px) {
+    .p-home,
+    .p-home-list,
+    .p-visit,
+    .p-visit2,
+    .p-apply,
+    .p-about {
+      font-size: 1rem; /* Adjust the font size as needed */
+    }
+  }
+  
+  
+  .form-check-inline .form-check-label {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .form-check-inline .form-check-label i {
+    margin-left: 10px;
+  }
+  
+  
+  .form-control.radio-group {
+    background-color: #dbeef5; /* Background color */
+    border: 1px solid #ced4da; /* Border */
+    border-radius: 20px; /* Border radius */
+    display: flex; /* Use flexbox */
+    justify-content: space-around; /* Align items with equal space around */
+    padding: 10px 20px; /* Adjust padding for spacing */
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .form-control.radio-group {
+        flex-direction: column; /* Stack items vertically */
+        align-items: left; /* Align items in the center */
+        padding: 20px; /* Adjust padding for spacing */
+        height: auto;
+    }
+  
+    .form-check {
+        margin-bottom: 10px; /* Add space between radio buttons */
+    }
+  }
+  
+  /* Styles for Checkbox Group */
+  .checkbox-group {
+    background-color: #dbeef5; /* Background color */
+    border: 1px solid #ced4da; /* Border */
+    border-radius: 20px; /* Border radius */
+    padding: 10px 20px; /* Adjust padding for spacing */
+    display: flex; /* Use flexbox */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: space-between; /* Distribute items evenly between rows */
+    height: auto;
+    padding-top: 30px;
+  }
+  
+  .checkbox-group .form-check {
+    width: calc(25% - 10px); /* Set width to 33.33% minus the margin */
+    margin-bottom: 10px; /* Add space between checkboxes */
+    height: auto;
+    box-sizing: border-box;
+  }
+  
+  .checkbox-group .form-check-input {
+    margin-right: 5px; /* Adjust spacing between checkbox and label */
+  }
+  
+  
+  
+  @media (max-width: 768px) {
+    .checkbox-group .form-check {
+        width: calc(33.3% - 10px); /* Set width to 50% minus the margin for two items per row */
+        height: auto;
+    }
+  }
+  
+  
+  .shadow-box-visit {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #0F2D49;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 20px;
+    display: block;
+    border-radius: 50px;
+    padding: 40px;
+    /* height: 370px;
+    width: auto; */
+  }
+  
+  
+  
+  
+  .text-section-visit {
+    padding-right: 10px;
+    color:#dbeef5;
+    justify-content: center;
+  }
+  
+  .image-section-visit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image-section-visit2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .map-container {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 50px;
+    overflow: hidden;
+  }
+  
+  .hide-on-small-screens {
+    display: block; /* Default display */
+  }
+  
+  @media (max-width: 768px) {
+    .hide-on-small-screens {
+        display: none; /* Hide on screens 768px or smaller */
+    }
+  }
+  
+  
+  @media (max-width: 768px) {
+    .shadow-box-visit {
+        flex-direction: column;
+        text-align: flex-start;
+        margin: 0 10px; /* Reduce margin on smaller screens */
+        padding: 10px; /* Reduce padding on smaller screens */
+    }
+    
+    .text-section-visit {
+        padding-right: 10px;
+        margin-bottom: 20px;
+        padding-left: 10px;
+        word-spacing: -2.5px;
+    }
+    .image-section-visit {
+        margin-bottom: 40px;
+    }
+    .image-section-visit2 {
+      padding: 20px;
+  }
+    .image-container img {
+        width: 100%;
+        height: auto;
+    }
+    .map-container {
+      margin-top: 10px;
+  }
+  }
+  
+  
+  .banner-sectionnew {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh; /* Adjust as per your needs */
+    background: #000; /* Fallback background color */
+    color: #fff; /* Text color */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  @media (max-width: 768px) {
+    
+    .container-small {
+          
+          margin-top: 50px; /* Reduce padding on smaller screens */
+          padding-top: 50px;
+      }
+  }
+  
+  .banner-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 100;
+  }
+  
+  .banner-content {
+    z-index: 1000;
+  }
+  
+  
+  .cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #5b62f4; /* Primary color */
+    color: white;
+    padding: 30px;
+    text-align: center;
+    z-index: 1000;
+    display: none;
+    margin-bottom: 10px; /* Adjust this value to add spacing between the footer and the banner */
+    border-radius: 20px; /* Rounded top corners */
+  }
+  
+  
+  .cookie-banner p {
+    margin: 0;
+    padding: 0;
+    display: inline;
+  }
+  
+  .cookie-banner button {
+    background-color: #ffffff;
+    color: #5b62f4; /* Primary color for text */
+    border: none;
+    padding-top:10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-left: 20px;
+    border-radius: 20px; /* Curved borders */
+    transition: background-color 0.3s ease;
+  }
+  
+  .cookie-banner button:hover {
+    background-color: #e09f3e;
+  }
+  
+  .cookie-settings {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    color: #5b62f4; /* Primary color for text */
+    padding: 20px;
+    border: 1px solid #5b62f4; /* Primary color for border */
+    z-index: 1001;
+    border-radius: 12px; /* Curved borders */
+  }
+  
+  
+  
+  .cookie-settings h2 {
+    margin-top: 0;
+  }
+  
+  .cookie-settings form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .cookie-settings label {
+    margin-bottom: 10px;
+  }
+  
+  .cookie-settings button {
+    background-color: #5b62f4; /* Primary color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 12px; /* Curved borders */
+    transition: background-color 0.3s ease;
+  }
+  
+  .cookie-settings button:hover {
+    background-color: #5b62f4;
+  }
+  
+  
+  
+  @media (max-width: 768px) {
+    
+    
+  .cookie-settings {
+    margin-top: 150px;
+    padding: 10px;
+  
+    z-index: 1100;
+  
+  }
+  
+  }
+  
+  
+  .map {
+    height: 700px;
+    width: 100%;
+  }
+  
+  .weather-info {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color:  rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none; /* Initially hide */
+  }
+  
+  .card-home{
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  
+  .card-new{
+    background-color: rgb(102 86 129);
+    height: 300px;
+    color: aquamarine;
+    font-family: cursive;
+  }
+  
+  card img {
+    object-fit: cover;
+    height: 200px; /* Adjust the height as needed */
+  }
+  
+  .card-body-new {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  
+  .img-thumbnail {
+    padding-top: 20px;
+    border: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 0px;
+    height: 180px;
+  }
+  

@@ -1,0 +1,66 @@
+{% extends 'weather/base.html' %}
+{% load static %}
+
+
+{% block title %}
+Cloud Event Weather
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+{% endblock %}
+
+{% block content %}
+
+<div class="banner-sectionnew pt-5 pb-5 bg-info text-white">
+    <!-- Video element -->
+    <video autoplay loop muted class="banner-video">
+        <source src= "{{ MEDIA_URL }}background.mp4" type="video/mp4">
+
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Content inside the banner -->
+    <div class="container-fluid container-small  px-md-5 mb-0 banner-content">
+        <div class="row align-items-center justify-content-center px-3">
+
+            <div class="col-lg-6 text-center">
+                <!-- Add any additional content or images here -->
+                <div class="container">
+                    <div class="text-center pt-5 pb-2">
+                        <h1 class="mb-4 text-white"></h1>
+                    </div>
+                    {% if messages %}
+                    <div style="text-align: center;">
+                        {% for message in messages %}
+                        <div class="alert alert-dismissible alert-{{ message.tags }}"> <!-- Show the warning message -->
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            {{ message }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    <div class="card card-home">
+                        <div class="card-body">
+                            <div class="row align-items-center justify-content-center">
+                                <div class="col-lg-11 " data-aos="fade-up" data-aos-duration="2000">
+                                    <div id="map" class="map mt-4 mb-4 p-3">
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% block extra_js %}
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="{% static 'js/app.js' %}"></script>
+
+{% endblock %}
+
+{% endblock %}
